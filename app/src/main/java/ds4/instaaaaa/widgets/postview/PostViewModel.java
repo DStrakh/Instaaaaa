@@ -1,9 +1,13 @@
 package ds4.instaaaaa.widgets.postview;
 
-/**
- * Created by M6700 on 20.10.2017.
- */
-
 public class PostViewModel {
-    // insta for view
+    String userName;
+
+    public PostViewModel(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
 }

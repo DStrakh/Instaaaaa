@@ -37,6 +37,66 @@ public class PostApiModel {
     String type;
     @SerializedName("link")
     String link;
-    @SerializedName("carousel_media")
+    @SerializedName("location")
     String location;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public ProfileApiModel getUser() {
+        return user;
+    }
+
+    public ImagesApiModel getImages() {
+        return images;
+    }
+
+    public List<ImageApiModel> getCarouselMedia() {
+        return carouselMedia;
+    }
+
+    public Timestamp getCreated() {
+        return created;
+    }
+
+    public CaptionApiModel getCaption() {
+        return caption;
+    }
+
+    public LikeApiModel getLikes() {
+        return likes;
+    }
+
+    public List<CommentApiModel> getComments() {
+        return comments;
+    }
+
+    public List<UserOnPhotoApiModel> getUsersOnPhoto() {
+        return usersOnPhoto;
+    }
+
+    public boolean isCanViewComments() {
+        return canViewComments;
+    }
+
+    public boolean isCanDeleteComments() {
+        return canDeleteComments;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public String getLocation() {
+        return location;
+    }
 }

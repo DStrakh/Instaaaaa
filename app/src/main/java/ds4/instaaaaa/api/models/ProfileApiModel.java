@@ -15,4 +15,20 @@ public class ProfileApiModel {
     String profilePictureUrl;
     @SerializedName("username")
     String userName;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public String getProfilePictureUrl() {
+        return profilePictureUrl;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
 }
