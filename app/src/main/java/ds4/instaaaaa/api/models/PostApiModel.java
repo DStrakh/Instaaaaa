@@ -8,7 +8,7 @@ import java.util.List;
 
 public class PostApiModel {
     @SerializedName("id")
-    int id;
+    String id;
     @SerializedName("code")
     String code;
     @SerializedName("user")
@@ -20,13 +20,13 @@ public class PostApiModel {
     @SerializedName("carousel_media")
     List<ImageApiModel> carouselMedia;
     @SerializedName("created_time")
-    Timestamp created;
+    String created;
     @SerializedName("caption")
     CaptionApiModel caption;
     @SerializedName("likes")
     LikeApiModel likes;
-    @SerializedName("comments")
-    List<CommentApiModel> comments;
+   /* @SerializedName("comments")
+    List<CommentApiModel> comments;*/
     @SerializedName("users_in_photo")
     List<UserOnPhotoApiModel> usersOnPhoto;
     @SerializedName("can_view_comments")
@@ -37,10 +37,10 @@ public class PostApiModel {
     String type;
     @SerializedName("link")
     String link;
-    @SerializedName("location")
-    String location;
+    /*@SerializedName("location")
+    String location;*/
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -60,7 +60,7 @@ public class PostApiModel {
         return carouselMedia;
     }
 
-    public Timestamp getCreated() {
+    public String getCreated() {
         return created;
     }
 
@@ -72,10 +72,10 @@ public class PostApiModel {
         return likes;
     }
 
-    public List<CommentApiModel> getComments() {
+    /*public List<CommentApiModel> getComments() {
         return comments;
     }
-
+    */
     public List<UserOnPhotoApiModel> getUsersOnPhoto() {
         return usersOnPhoto;
     }
@@ -96,7 +96,7 @@ public class PostApiModel {
         return link;
     }
 
-    public String getLocation() {
+    /*public String getLocation() {
         return location;
-    }
+    }*/
 }

@@ -15,4 +15,16 @@ public class ImagesApiModel {
     ImageApiModel lowResolution;
     @SerializedName("standart_resolution")
     ImageApiModel standartResolution;
+
+    public ImageApiModel getThumbnail() {
+        return thumbnail;
+    }
+
+    public ImageApiModel getLowResolution() {
+        return lowResolution;
+    }
+
+    public ImageApiModel getStandartResolution() {
+        return standartResolution;
+    }
 }

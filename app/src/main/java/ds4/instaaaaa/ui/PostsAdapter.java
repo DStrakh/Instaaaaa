@@ -4,47 +4,52 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
+import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import ds4.instaaaaa.R;
 import ds4.instaaaaa.api.models.PostApiModel;
 import ds4.instaaaaa.widgets.postview.PostView;
-import ds4.instaaaaa.widgets.postview.PostViewModel;
+import ds4.instaaaaa.widgets.postview.PostModel;
 
 public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostViewHolder>{
-    private List<PostViewModel> posts;
+    private List<PostModel> posts = null;
 
-    //public PostsAdapter(List<PostViewModel> posts) {
-    //    this.posts = posts;
-    //}
+/*    public PostsAdapter(List<PostModel> posts) {
+        this.posts = posts;
+    }*/
 
     public PostsAdapter(List<PostApiModel> postApiModels) {
-        if (postApiModels == null)
+        if (postApiModels == null || postApiModels.size() == 0)
             return;
+        posts = new ArrayList<>();
         for(int i = 0; i < postApiModels.size(); i++){
+            PostApiModel postApiItem  = postApiModels.get(i);
             this.posts.add(
-                    new PostViewModel(
-                            postApiModels.get(i)
-                                    .getUser()
-                                    .getUserName()));
+                    new PostModel(
+                            postApiItem.getUser().getUserName()
+                            ,postApiItem.getImages().getLowResolution().getUrl()
+                            ,postApiItem.getCreated()
+                            ,postApiItem.getCaption().getText()
+                    )
+            );
         }
-
+//String imageUrl, String date, String postMessage
 
     }
 
     @Override
     public PostViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item_post, parent, false );
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.view_item_post, parent, false);
         return new PostViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(PostViewHolder holder, int position) {
-        PostViewModel post = posts.get(position);
-        holder.postView.setData(post);
+        PostModel post = posts.get(position);
+        //holder.postView.setData(post); govno
         holder.bind(post); //?
 
     }
@@ -61,7 +66,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.PostViewHold
             super(itemView);
         }
 
-        public void bind(PostViewModel model){
+        public void bind(PostModel model){
             postView.setData(model);
         }
     }

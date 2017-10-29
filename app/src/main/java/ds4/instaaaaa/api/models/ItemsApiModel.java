@@ -12,4 +12,7 @@ public class ItemsApiModel {
     @SerializedName("items")
     List<PostApiModel> items;
 
+    public List<PostApiModel> getItems() {
+        return items;
+    }
 }

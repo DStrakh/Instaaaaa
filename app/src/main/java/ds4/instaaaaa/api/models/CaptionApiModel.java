@@ -13,11 +13,11 @@ import java.security.Timestamp;
 
 public class CaptionApiModel {
     @SerializedName("id")
-    int id;
+    String id;
     @SerializedName("text")
     String text;
     @SerializedName("created_time")
-    Timestamp created;
+    String created;
     @SerializedName("from")
     ContactsContract.Profile author;
 
@@ -25,14 +25,14 @@ public class CaptionApiModel {
 
     }
 
-    public CaptionApiModel(int id, String text, Timestamp created, ContactsContract.Profile author) {
+    public CaptionApiModel(String id, String text, String created, ContactsContract.Profile author) {
         this.id = id;
         this.text = text;
         this.created = created;
         this.author = author;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
@@ -40,7 +40,7 @@ public class CaptionApiModel {
         return text;
     }
 
-    public Timestamp getCreated() {
+    public String getCreated() {
         return created;
     }
 

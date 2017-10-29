@@ -14,8 +14,23 @@ public class CommentApiModel {
     @SerializedName("text")
     String text;
     @SerializedName("created_time")
-    Timestamp created;
+    String created;
     @SerializedName("from")
     ProfileApiModel author;
 
+    public int getId() {
+        return id;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public String getCreated() {
+        return created;
+    }
+
+    public ProfileApiModel getAuthor() {
+        return author;
+    }
 }

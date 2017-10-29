@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ProfileApiModel {
     @SerializedName("id")
-    int id;
+    String id;
     @SerializedName("full_name")
     String fullName;
     @SerializedName("profile_picture")
@@ -16,7 +16,7 @@ public class ProfileApiModel {
     @SerializedName("username")
     String userName;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
