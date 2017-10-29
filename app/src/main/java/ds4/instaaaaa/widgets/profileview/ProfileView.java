@@ -27,7 +27,7 @@ public class ProfileView extends FrameLayout {
         inflate();
     }
 
-    public void setData(ProfileModel model){
+    public void setData(ProfileViewModel model){
         tvNickname.setText(model.getNickname());
         tvDescription.setText(model.getDescription());
         // TODO: 19.10.2017 : add image size control

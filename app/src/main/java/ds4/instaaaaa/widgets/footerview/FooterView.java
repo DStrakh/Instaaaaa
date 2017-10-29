@@ -25,7 +25,7 @@ public class FooterView extends FrameLayout {
         inflate();
     }
 
-    public void setData(FooterModel model){
+    public void setData(FooterViewModel model){
 
     }
 

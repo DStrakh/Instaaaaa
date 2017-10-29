@@ -1,11 +1,8 @@
 package ds4.instaaaaa.api;
 
 import ds4.instaaaaa.App;
-import ds4.instaaaaa.InstaCallback;
 import ds4.instaaaaa.api.models.ItemsApiModel;
-import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 public class PostLoader {
     private String nickName = "ilovefantasy";
